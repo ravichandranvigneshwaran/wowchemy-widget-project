@@ -1,15 +1,23 @@
 {{ $page := .root }}
 {{ $section := .page }}
 
-<h2>{{$section.Title}}</h2>
-
-<p>{{$section.Content}}</p>
+<style>
+.body-container{
+    padding: 0px 50px;
+}
+.card-heading{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0px;
+}
+</style>
 
 <div class="container body-container" style="padding-top: 20px">
     
     <div class="row">
         <div class="col-lg-5" style="background-color: #33a5db; color: white; padding-top: 10px">
-            <h1>Automated Software Engineering</h1>
+            <h1 class="card-heading">Automated Software Engineering</h1>
         </div>
     </div>
     <div class="card-body">
@@ -124,7 +132,7 @@
     </div>
     <div class="row">
         <div class="col-lg-5" style="background-color: #33a5db; color: white; padding-top: 10px">
-            <h1>Quality Attributes in Mobile Apps</h1>
+            <h1 class="card-heading">Quality Attributes in Mobile Apps</h1>
         </div>
     </div>
     <div class="card-body">
@@ -240,7 +248,7 @@
     </div>
     <div class="row">
         <div class="col-lg-5" style="background-color: #33a5db; color: white; padding-top: 10px">
-            <h1>Software Testing</h1>
+            <h1 class="card-heading">Software Testing</h1>
         </div>
     </div>
     <div class="card-body">
