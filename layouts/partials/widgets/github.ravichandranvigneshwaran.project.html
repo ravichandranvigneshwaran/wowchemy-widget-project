@@ -378,7 +378,7 @@
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
     var context = new XMLHttpRequest();
-                    context.open('GET', '"/files/project.json');
+                    context.open('GET', "/files/project.json",true);
                     context.onreadystatechange = function() {
                     // alert(context.responseText);
                     }
