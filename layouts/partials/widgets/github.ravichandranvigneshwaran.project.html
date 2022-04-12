@@ -279,9 +279,10 @@
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
 <script id="entry-template" type="text/x-handlebars-template">
+    {{#each .}}
     <div class="row">
         <div class="col-lg-5" style="background-color: #33a5db; color: white; padding-top: 10px">
-            <h1 class="card-heading">Automated Software Engineering</h1>
+            <h1 class="card-heading">{{title}}</h1>
         </div>
     </div>
     <div class="card-body">
@@ -359,6 +360,7 @@
             </div>
         </div>
     </div>
+    {{/each}}
   </script>
 
   <script>
@@ -380,11 +382,13 @@
     var context = new XMLHttpRequest();
     context.responseType = 'json';
     context.open('GET', "/files/project.json",true);
-                    context.send();
-                    console.log(context);
-    var jsonData = context.response;                
-    console.log(jsonData);
-    var html = template(context);
+    xhr.onload = function(e) {
+    if (this.status == 200) {
+        console.log('response', this.response); // JSON response 
+        var html = template(context);
+        console.log(html);
+    }
+    }; 
     }
 
     initData();
