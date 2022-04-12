@@ -374,9 +374,13 @@
     rawFile.send();
     }
 
-  var source = document.getElementById("entry-template").innerHTML;
-  var template = Handlebars.compile(source);
-  var context = readTextFile();
-  console.log(context);
-//   var html = template(context);
+    function initData(){
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var context = readTextFile();
+    console.log(context);
+    var html = template(context);
+    }
+
+    initData();
   </script>
