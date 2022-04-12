@@ -362,22 +362,27 @@
   </script>
 
   <script>
-    function readTextFile() {
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "/files/project.json", true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4) {
-        var allText = rawFile.responseText;
-        return allText;
-        }
-    }
-    rawFile.send();
-    }
+    // function readTextFile() {
+    // var rawFile = new XMLHttpRequest();
+    // rawFile.open("GET", "/files/project.json", true);
+    // rawFile.onreadystatechange = function() {
+    //     if (rawFile.readyState === 4) {
+    //     var allText = rawFile.responseText;
+    //     // return allText;
+    //     }
+    // }
+    // rawFile.send();
+    // }
 
     function initData(){
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
-    var context = readTextFile();
+    var context = new XMLHttpRequest();
+                    client.open('GET', '"/files/project.json');
+                    client.onreadystatechange = function() {
+                    alert(client.responseText);
+                    }
+                    client.send();
     console.log(context);
     var html = template(context);
     }
