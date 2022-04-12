@@ -382,9 +382,8 @@
     context.open('GET', "/files/project.json",true);
                     context.send();
                     console.log(context);
-    // context = JSON.parse(context.response);
-                    
-                    console.log(context);
+    var jsonData = context.response;                
+    console.log(jsonData);
     var html = template(context);
     }
 
