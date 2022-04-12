@@ -383,7 +383,8 @@
                     // alert(context.responseText);
                     }
                     context.send();
-    console.log(context);
+    context = JSON.parse(context.response);
+                    console.log(context);
     var html = template(context);
     }
 
