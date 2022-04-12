@@ -378,13 +378,11 @@
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
     var context = new XMLHttpRequest();
-                    context.open('GET', "/files/project.json",true);
-                    context.onreadystatechange = function() {
-                    // alert(context.responseText);
-                    }
+    context.responseType = 'json';
+    context.open('GET', "/files/project.json",true);
                     context.send();
                     console.log(context);
-    context = JSON.parse(context.response);
+    // context = JSON.parse(context.response);
                     
                     console.log(context);
     var html = template(context);
