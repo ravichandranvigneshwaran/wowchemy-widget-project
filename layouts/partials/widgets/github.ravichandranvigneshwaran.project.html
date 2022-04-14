@@ -278,7 +278,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="/files/swag.js"></script>
-<script src="/files/project-template.js"></script>
+
 
 
   <script>
@@ -296,8 +296,8 @@
 
     function initData(){
     Swag.registerHelpers(Handlebars);
-    var source = document.getElementById("entry-template").innerHTML;
-    var template = Handlebars.compile(source);
+    // var source = document.getElementById("entry-template").innerHTML;
+    // var template = 
     var context = new XMLHttpRequest();
     context.responseType = 'json';
     context.open('GET', "/files/project.json",true);
@@ -312,3 +312,5 @@
 
     initData();
   </script>
+
+<script src="/files/project-template.js"></script>
