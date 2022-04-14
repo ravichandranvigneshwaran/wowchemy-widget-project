@@ -299,10 +299,14 @@
     var context = new XMLHttpRequest();
     context.responseType = 'json';
     context.open('GET', "/files/project.json",true);
+    context.onreadystatechange = function () {
+        if (context.readyState === 4) {
+        console.log('response', this.response); // JSON response 
+        var html = template(context);
+        console.log(html)
+    }
+    };
     context.send();
-    console.log(context);
-    var jsonData = context.response;                
-    console.log(jsonData); 
     }
 
     initData();
