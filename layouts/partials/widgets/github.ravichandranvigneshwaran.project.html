@@ -277,91 +277,8 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<script src="/files/swag.js"></script>
 
-<script id="entry-template" type="text/x-handlebars-template">
-    {{#each .}}
-    <div class="row">
-        <div class="col-lg-5" style="background-color: #33a5db; color: white; padding-top: 10px">
-            <h1 class="card-heading">{{title}}</h1>
-        </div>
-    </div>
-    <div class="card-body">
-        <div class="card-columns">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Zilicio: An Automation Framework for Rapid Native Mobile Application Development</h5>
-                </div>
-                <div class="card-body">
-                    <div style="width: 100%; text-align: center">
-                        
-                        <img class="project-image" src="https://media.istockphoto.com/vectors/software-engineering-banner-and-icons-vector-id636526232?k=20&m=636526232&s=170667a&w=0&h=Gr4lG-mwzctLhPganTlK5SFaEKKXqjnmPQbWWavBLFA="
-                            alt="Zilicio: An Automation Framework for Rapid Native Mobile Application Development">
-                    </div>
-                    <div class="card-text">
-                        Zilicio, an automation framework that allows inexperienced and experienced developers to build
-                        real world apps in minutes for the two dominant mobile platforms. Zilicio creates both Android
-                        and iOS versions of a mobile application, which is connected to an automatically generated
-                        RESTful backend, all through a friendly end-user web application.
-                    </div>
-                </div>
-                <div class="card-footer d-flex flex-row flex-wrap justify-content-center"
-                    style="background-color: #33a5db">
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <h5>Automatic Analysis of Closed-Source Mobile Apps to support Software Engineering Tasks</h5>
-                </div>
-                <div class="card-body">
-                    <div style="width: 100%; text-align: center">
-                        
-                        <img class="project-image" src="https://media.istockphoto.com/vectors/software-engineering-banner-and-icons-vector-id636526232?k=20&m=636526232&s=170667a&w=0&h=Gr4lG-mwzctLhPganTlK5SFaEKKXqjnmPQbWWavBLFA="
-                            alt="Automatic Analysis of Closed-Source Mobile Apps to support Software Engineering Tasks">
-                    
-                    </div>
-                    <div class="card-text">
-                        The amount of android applications is having a tremendous increasing trend, leading the mobile
-                        software market to exert pressure over practitioners and researchers about several topics like
-                        application quality, frequent releases, and quick fixing of bugs. Because of this, mobile app
-                        development process requires of improving the release cycles. Therefore, the automation of
-                        software engineering tasks has become a top research topic. As a result of this research
-                        interest, several automated approaches have been proposed to support software engineering tasks.
-                        Specifically for this research we explore the possibility of performing automated software
-                        engineering tasks using APKs as entry instead of source code.
-                    </div>
-                </div>
-                <div class="card-footer d-flex flex-row flex-wrap justify-content-center"
-                    style="background-color: #33a5db">
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                    <div>
-                        <img class="rounded-circle profile" alt="Mohamed Wiem Mkaouer" title="Mohamed Wiem Mkaouer"
-                            src="/author/mohamed-wiem-mkaouer/avatar_hu6ff10dbe48222c87eaa06aa61a713322_27020_270x270_fill_q75_lanczos_center.jpg">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/each}}
-  </script>
 
   <script>
     // function readTextFile() {
@@ -377,6 +294,8 @@
     // }
 
     function initData(){
+    var Handlebars = require("handlebars");
+    Swag.registerHelpers(Handlebars);
     var source = document.getElementById("entry-template").innerHTML;
     var template = Handlebars.compile(source);
     var context = new XMLHttpRequest();
@@ -386,7 +305,7 @@
     if (this.status == 200) {
         console.log('response', this.response); // JSON response 
         var html = template(context);
-        console.log(html);
+        console.log(html)
     }
     }; 
     }
