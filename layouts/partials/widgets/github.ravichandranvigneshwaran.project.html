@@ -301,7 +301,7 @@
     var context = new XMLHttpRequest();
     context.responseType = 'json';
     context.open('GET', "/files/project.json",true);
-    xhr.onload = function(e) {
+    context.onload = function(e) {
     if (this.status == 200) {
         console.log('response', this.response); // JSON response 
         var html = template(context);
