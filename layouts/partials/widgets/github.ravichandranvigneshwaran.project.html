@@ -302,7 +302,7 @@
     context.onreadystatechange = function () {
         if (context.readyState === 4) {
         console.log('response', this.response); // JSON response 
-        window.template
+        console.log(window.template);
         var html = window.template(context);
         console.log(html)
     }
